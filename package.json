@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/cmccray87/Hunger-Mate/issues"
   },
-  "homepage": "https://missystiner.github.io/hangry/",
+  "homepage": ".",
   "private": false,
   "dependencies": {
     "@apollo/client": "^3.5.5",
