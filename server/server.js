@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
@@ -24,3 +25,9 @@ db.once('open', () => {
     console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
 });
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/hunger-mate', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+module.exports = mongoose.connection;
