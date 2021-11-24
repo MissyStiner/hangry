@@ -4,6 +4,12 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Page from "./components/Page";
 import Home from './pages/Home';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -34,21 +40,12 @@ function App() {
 
     return (
       <ApolloProvider client={client}>
-        <div className="flex-column justify-flex-start min-100-vh">
-          <Header>
-            <Nav
-              pages={pages}
-              setCurrentPage={setCurrentPage}
-              currentPage={currentPage}
-            ></Nav>
-          </Header>
-          <div className="container">
-            <main>
-              <Page currentPage={currentPage}></Page>
-            </main>
-          <Home />
-          </div>
-        </div>
+      <BrowserRouter>
+          <nav />
+          <Switch> 
+             <Route path="/" component={componentToRenderBasedOnPath} />
+          </Switch>
+          </BrowserRouter>
       </ApolloProvider>
     );
   };

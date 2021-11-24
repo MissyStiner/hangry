@@ -72,6 +72,7 @@ const resolvers = {
             { new: true }
           );
         
+    console.log(`order`);
         return order;
         }
         
