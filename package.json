@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/cmccray87/Hunger-Mate/issues"
   },
-  "homepage": ".",
+  "homepage": "https://hungermate.herokuapp.com/",
   "private": false,
   "dependencies": {
     "@apollo/client": "^3.5.5",
